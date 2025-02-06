@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        .task { padding: 5px; margin: 5px 0; }
+        .high-priority { color: red; }
+        .low-priority { color: grey; }
+    </style>
+</head>
+<body>
+
+    <h2>Task Manager</h2>
+
+    <!-- Input for adding new tasks -->
+    <input type="text" id="task-input" placeholder="Enter task">
+    <label for="">Priority :</label>
+    <select id="priority-input">
+        <option value="0">Low</option>
+        <option value="1">High</option>
+    </select>
+    
+
+    <!-- Task list container -->
+    <div id="task-list"></div>
+
+    <!-- Filter buttons -->
+    <div class="button">
+        <button id="add-task-btn">Add Task</button>
+        <button id="filter-all">Show All the tasks</button>
+        <button id="filter-important">Show the important tasks</button>
+        <button id="filter-not-important">Show the tasks that are not important</button>
+    </div>
+    
+
+    <script src="index.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
