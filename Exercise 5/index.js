@@ -10,9 +10,11 @@ function displayTasks(taskList) {
 
     taskList.forEach(task => {
         const taskElement = document.createElement("div");
+        taskContainer.style.color = "white";
+        taskElement.style.backgroundColor = task.priority === 1 ? "red" : "grey";
         taskElement.textContent = task.description;
         taskElement.classList.add("task");
-        taskElement.classList.add(task.priority === 1 ? "high-priority" : "low-priority");
+
         taskContainer.appendChild(taskElement);
     });
 }
@@ -33,12 +35,18 @@ function addTask() {
 
 
 function filterTasks(priority) {
+    let filteredTasks = [];
     if (priority === "all") {
         displayTasks(tasks);
-    } else {
-        const filteredTasks = tasks.filter(task => task.priority === priority);
+    }else{
+        tasks.forEach(task => {
+            if (task.priority === priority) {
+                filteredTasks.push(task);
+            }
+        });
         displayTasks(filteredTasks);
     }
+    
 }
 
 document.getElementById("add-task-btn").addEventListener("click", addTask);
